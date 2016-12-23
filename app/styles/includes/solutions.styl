@@ -1,0 +1,73 @@
+$cls = 'solutions'
+
+.{$cls}
+  &__title
+    margin-bottom 20px
+    font-weight 500
+
+  &__item
+    position relative
+    margin-bottom 5px
+    padding 4% 3.4% 0
+    font-size 0
+    background-repeat no-repeat
+    background-position top center
+    background-size cover
+    transition box-shadow .2s ease
+    &._active
+      box-shadow inset 0 0 0 5px $border-green
+      .{$cls}
+        &__type-description
+          display block
+
+  &__radio
+    display inline-block
+    vertical-align top
+    width auto
+    //margin-right 17px change to %
+
+  &__type
+    display inline-block
+    vertical-align top
+    width calc(100% - 45px) //radiobutton width + margin-right
+    margin-bottom 1%
+    padding-top 4px
+    cursor pointer
+
+  &__type-title
+    margin-bottom 13px
+    color #fff
+    line-height 21px
+    text-shadow 0 1px 0 rgba(0, 0, 0, 0.5)
+    &.title
+      font-weight 500
+      line-height 21px
+
+  &__type-description
+    display none
+    margin-bottom 2.7%
+    padding-bottom 1%
+    font-family $openSans
+    font-size 14px
+    line-height 20px
+    color #fff
+    text-shadow 0 1px 0 rgba(0, 0, 0, 0.5)
+
+
+@media $mDesktop
+  .{$cls}
+    &__title
+      margin-bottom 6%
+
+    &__item
+      margin-bottom 5%
+      padding 19px 14px 0
+
+    &__type
+      padding-top 3px
+
+    &__type-title
+      margin-bottom 5%
+
+    &__radio
+      margin-right 12px

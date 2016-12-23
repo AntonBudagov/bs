@@ -1,0 +1,128 @@
+.sectionFour
+  background-color: #003399
+  padding-top: 43px
+  padding-bottom: 65px
+  h3
+    color: white
+    font-size: 24px
+    line-height: 30px
+
+  h4
+    margin-top: 38px
+    color: #bed5ff
+    font-size: 18px
+    font-weight: 400
+    line-height: 24px
+    text-align: center
+
+  .flexB
+    margin-top: 35px
+    display: block
+
+  .singleProduct
+    margin-bottom: 35px
+    .wrappImg
+      text-align: center
+  .guaranty
+    text-align: center
+
+    h4
+      font-size: 30px
+      font-weight: 600
+      margin-bottom: 20px
+      color: #fff
+    .guarantes
+      display: inline-block
+      .guarant
+        width: 320px
+
+        .wrappImg
+          margin-bottom: 19px
+          height: 104px
+          position: relative
+          img
+            position: absolute
+            left: 0
+            bottom: 0
+            margin: auto
+        .decrtiption
+          text-align: left
+          *
+            font-size: 14px
+            font-weight: 400
+            line-height: 24px
+          p
+            color: white;
+          span
+            color: #88b0ff
+
+        &:last-child
+          .wrappImg
+            max-width: 185px
+
+
+
+@include breakpoint($medium)
+  .sectionFour
+    padding-top: 59px
+    padding-bottom: 0
+    background-image: url(../img/background_s3.jpg)
+    background-repeat: no-repeat
+    background-position: top center
+    h3
+      font-size: 36px
+      line-height: 48px
+      max-width: 720px
+      margin: 0 auto
+    h4
+      margin-top: 26px
+      font-size: 24px
+      line-height: 30px
+    .smallForm
+      margin-top: 16px
+    .flexB
+      margin-top: 72px
+      display: flex
+    .singleProduct
+      margin-bottom: 0
+      .wrappImg
+        max-width: 542px
+        transform: translate(0px, 20px)
+      h4
+        margin-bottom: 0
+    .guaranty
+      margin-top: 66px
+      h4
+        margin-bottom: 0
+      .guarantes
+        display: flex
+        align-items: flex-start
+        padding-bottom: 104px
+        justify-content: space-between
+
+@include breakpoint($large)
+  .sectionFour
+    padding-top: 76px
+    h3
+      max-width: 1043px
+    h4
+      margin-top: 15px
+    .smallForm
+      margin-top: 35px
+    .singleProduct
+      margin-bottom: 0
+      .wrappImg
+        max-width: 673px
+        transform: translate(0)
+    .guaranty
+      margin-top: 105px
+      .guarantes
+        justify-content: flex-start
+        .guarant
+
+          margin-right: 68px
+          &:nth-child(2)
+            width: 275px
+            margin-right: 114px
+          &:last-child
+            margin-right: 0

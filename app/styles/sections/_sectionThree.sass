@@ -1,0 +1,196 @@
+.sectionThree
+
+  h3
+    color: #111
+    font-size: 48px
+    span
+      font-size: 24px
+      display: block
+
+
+  .steps
+    width: 100%
+
+    box-shadow: inset 0 0 32px rgba(0, 0, 0, 0.14)
+    position: relative
+    z-index: 1
+    background-color: #fcd201
+    padding-top: 60px
+    padding-bottom: 80px
+    .stepsContainer
+      margin-top: 60px
+      display: block
+      text-align: center
+    .step
+      width: 240px
+      margin: 0 10px 50px
+      display: inline-block
+      position: relative
+      .i-arrow_white
+        display: none
+        position: absolute
+        top: 81px
+        right: -34px
+        opacity: .4
+      .wrappImg
+        width: 201px
+        height: 201px
+        background-color: white
+        border-radius: 50%
+        position: relative
+        margin: 0 auto 14px
+      .calck
+        +sprite($calc)
+
+      .doc2
+        +sprite($doc2)
+      .alarm_clock
+        +sprite($alarm_clock)
+        left: 33px
+        top: -12px
+      .porgramms
+        +sprite($porgramms)
+        top: 30px
+        left: -19px
+
+      p
+        color: #343434
+        font-family: $defaultFont
+        font-size: 18px
+        font-weight: 400
+        line-height: 22px
+        text-align: center
+
+
+
+  .addOrder
+    padding-top: 58px
+    h3
+      font-size: 32px
+      margin-bottom: 61px
+      text-align: left
+    .lists
+      background-image: url(../img/background_man.png)
+      background-position: right bottom
+      background-size: 386px auto
+      background-repeat: no-repeat
+      padding-bottom: 434px
+
+    .list
+      max-width: 452px
+      width: 100%
+      display: inline-block
+      vertical-align: top
+      &:last-child
+        margin-top: 67px
+      h4
+        color: #343434
+        font-size: 18px
+        font-weight: 700
+        line-height: 24px
+        width: 320px
+      ul
+
+        li
+          font-size: 16px
+          font-weight: 400
+          line-height: 24px
+          color: #777
+          position: relative
+          padding-left: 18px
+          margin-top: 26px
+          &:before
+            position: absolute
+            content: ''
+            width: 8px
+            height: 8px
+            border-radius: 50%
+            display: inline-block
+            background-color: #003399
+            margin-right: 10px
+            left: 0
+            top: 8px
+          a
+            color: #006fb0
+            font-size: 16px
+            font-weight: 400
+            line-height: 24px
+            transition: color .22s ease-in
+            text-decoration: underline
+            &:hover
+              color: #37a1e0
+
+
+
+
+
+@include breakpoint($medium)
+  .sectionThree
+    h3
+      font-size: 60px
+      span
+        font-size: 36px
+        margin-top: -22px
+
+    .steps
+      padding-top: 61px
+      padding-bottom: 92px
+      .stepsContainer
+        display: flex
+        .step
+          margin: 0
+          display: block
+          .wrappImg
+            width: 168px
+            height: 168px
+          .i-arrow_white
+            display: block
+            right: -17px
+          .wrappImg
+            margin: 0 auto 14px
+
+    .addOrder
+      padding-top: 70px
+      h3
+        font-size: 48px
+        margin-bottom: 44px
+      .lists
+        padding-bottom: 115px
+        background: #fff
+        .list
+          h4
+            font-size: 24px
+            line-height: 30px
+          &:last-child
+            margin-top: 0
+            margin-left: 32px
+
+
+
+@include breakpoint($large)
+  .sectionThree
+    h3
+      span
+        margin-top: -16px
+    .steps
+      padding-top: 70px
+      min-height: 581px
+      .stepsContainer
+        .step
+          width: 240px
+          .i-arrow_white
+            right: -34px
+          .wrappImg
+            width: 201px
+            height: 201px
+
+    .addOrder
+      padding-top: 106px
+      h3
+        margin-bottom: 54px
+      .lists
+        background-image: url(../img/background_man.png)
+        background-position: right bottom
+        background-size: 386px auto
+        background-repeat: no-repeat
+        padding-bottom: 149px

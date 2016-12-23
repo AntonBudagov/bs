@@ -1,0 +1,108 @@
+.sectionFive
+  padding-top: 55px
+  padding-bottom: 69px
+  background-color: #f7f7f7
+  h2
+    color: #111
+    font-family: $brendFontBold
+    font-size: 24px
+    line-height: 30px
+    margin-bottom: 29px
+    text-align: center
+  .subtitle
+    color: #111
+    font-family: $brendFontBold
+
+    font-weight: 600
+
+    text-align: center
+    font-size: 18px
+    line-height: 22px
+
+
+  .smallBlock, .largeBlock
+
+    text-align: center
+    .item
+      transition: background .22s
+      text-align: center
+      background-color: #eaeaea
+      border: 1px solid rgba(0, 0, 0, 0.18)
+      padding: 0 33px
+      display: flex
+      align-items: center
+      flex-direction: column
+      justify-content: center
+      margin: 20px auto
+      p, span
+        display: table
+      &:first-child
+        margin-top: 0
+      &:hover
+        background-color:  #003399
+        color: white
+
+
+  .smallBlock
+    margin-top: 51px
+    .item
+      width: 290px
+      height: 91px
+      border: 1px solid rgba(0, 0, 0, 0.18)
+      font-size: 18px
+      font-weight: 400
+      color: #464646
+
+
+  .largeBlock
+    .item
+      width: 290px
+      height: 96px
+      border: 1px solid rgba(0, 0, 0, 0.18)
+
+
+@include breakpoint($medium)
+  .sectionFive
+    padding-top: 67px
+    h2
+      font-size: 48px
+      line-height: 60px
+      margin-bottom: 40px
+    .subtitle
+      line-height: 22px
+      font-size: 24px
+
+    .smallBlock, .largeBlock
+      display: flex
+      justify-content: space-between
+      .item
+        margin: 0
+
+    .smallBlock
+      margin-top: 36px
+      .item
+        width: 214px
+        height: 75px
+
+    .largeBlock
+      margin-top: 27px
+      padding-bottom: 108px
+      .item
+        width: 295px
+        height: 79px
+
+@include breakpoint($large)
+  .sectionFive
+    padding-top: 100px
+
+    .smallBlock
+      margin-top: 51px
+      .item
+        width: 260px
+        height: 91px
+
+
+    .largeBlock
+      .item
+        width: 358px
+        height: 91px

@@ -1,0 +1,270 @@
+@import 'vendors/fonts'
+@import 'includes/*'
+
+/*
+--------------------------------------------------------------------------------
+Menu
+--------------------------------------------------------------------------------
+*/
+
+$cls = 'menu_header'
+
+.{$cls}
+  position absolute
+  left 0
+  top 113px
+  background-color rgba(119, 188, 31, 0.95)
+  display inline-block
+  vertical-align top
+  width 100%
+  font-size 0
+  overflow hidden
+  transition all .5s
+  height calc(100vh - 113px)
+  // height 100%
+  // padding-right: 5%
+  padding-top 40px
+  padding-left 45px
+  padding-right 36px
+  display table
+  opacity 0
+  transform translateX(-100%)
+
+  &.active
+    transition transform 0.5s ease, opacity 0.5s ease
+    transform translateX(0%)
+    opacity 1
+
+
+  .link
+    font-size 20px
+    font-weight: 400
+    line-height: 27px
+    font-family: $dinCondensed
+
+
+  .menu__input
+    position relative
+
+  .menu__icon
+    position absolute
+    right 0
+    bottom 12px
+  .input_search
+    background-color transparent
+    height 38px
+    border none
+    border-bottom: 1px solid #e0e4ea
+    color: white
+    font-family: $openSans
+    font-size: 16px
+    font-weight: 400
+    padding 0
+    &::-webkit-input-placeholder
+      /* Chrome/Opera/Safari */
+      color white
+    &::-moz-placeholder
+      /* Firefox 19+ */
+      color white
+    &:-ms-input-placeholder
+      /* IE 10+ */
+      color white
+    &:-moz-placeholder
+      /* Firefox 18- */
+      color white
+
+  .menu__list
+    margin-top 44px
+    display flex
+    flex-direction: row
+    justify-content: space-between
+    .menu__col
+      width 50%
+      &:last-child
+        .menu__link
+          margin-bottom 10px
+          &:last-child
+            margin-bottom 0
+      &:nth-child(1)
+        width: 167px
+        .menu__link__link
+          margin-bottom 20px
+          &:last-child
+            margin-bottom 0
+        // margin-right 95px
+  // &__left
+  //   display table-cell
+  //   vertical-align middle
+  //   width 44.5%
+  //   height 100%
+  //   background #fff
+
+  // .icon_hamburger
+  //   width 25px
+  //   height auto
+  //   stroke #77bc1f
+  //   stroke-width 3px
+  // .icon_hamburger.active
+  //   .icon-hamburger
+  //     .p1
+  //       d: path("M2,25 L25,2")
+  //     .p2
+  //       d: path("M12.5,12.5 L12.5,12.5")
+  //     .p3
+  //       d: path("M25,25 L2,2")
+
+
+$clss = 'menu-how-work'
+  .{$clss}
+    background-color: #3b424b
+    width 100%
+    min-height 118px
+    padding-top 26px
+    padding-left 42px
+    padding-right 43px
+    padding-bottom 32px
+    height auto
+    position absolute
+
+    &__item
+      display flex
+      justify-content space-between
+      flex-direction row
+
+
+    &__link
+      display inline-block
+      vertical-align top
+      margin-bottom 0
+      &:hover
+        .link_line_solid
+          border-bottom-color: #72bc14
+
+    .link
+      width 117px
+      font-size 14px
+      font-weight: 400
+      line-height: 20px
+      font-family: $openSans
+      border-bottom-color: #609e11
+
+
+
+
+    .icon_arrow-next
+      width 18px
+      height 37px
+      opacity .39
+      align-self center
+
+$clsss = 'content-how-work'
+  .{$clsss}
+    position absolute
+    top 0
+    left 0
+    width 100%
+    background-color white
+    min-height 100vh
+
+    &__title
+      color: #262a30
+      font-family: $dinCondensed
+      font-weight: 400
+      padding 45px 43px 31px 42px
+    .brend_line_green
+      color: white
+      background-color $btn-green
+      padding 11px 43px 11px 42px
+
+  .count
+    padding-top 37px
+    padding-left 42px
+    padding-right 43px
+    &__item
+      display flex
+      color: $btn-green
+      font-weight: 400
+      font-family: $dinCondensed
+      justify-content: flex-start
+      align-items: center
+    &__number
+      font-size: 72px
+      margin-right 11px
+    &__text
+      font-size 20px
+      width 105px
+
+    .icon_umbrella
+      width 50px
+      height 51px
+      margin-right 11px
+
+  .travel
+
+    border-bottom 1px solid #e0e4ea
+    padding-bottom 33px
+    &__item
+      padding-left 42px
+      padding-right 43px
+    &__title
+      margin-bottom: 2.7%
+    &__text
+      font-family: $openSans
+      font-size: 14px
+      line-height: 20px
+    &__map
+      margin-top 13px
+      margin-bottom 17px
+      text-align: center
+    &__number
+      color: $btn-green
+      font-size: 72px
+      margin-right 11px
+    .icon_medical-inst
+      width 97px
+      height 64px
+      margin-right 21px
+
+    &__sub-item
+      display flex
+      padding-top 36px
+      .travel__number
+          margin-right 36px
+    .degree
+      text-align center
+      border-left solid 1px #e0e4ea
+      height 84px
+      span
+        display block
+        &:last-child
+          font-size: 20px
+
+
+
+
+@media $mDesktop
+  .{$cls}
+    width 49%
+
+  .{$clss}
+    padding-bottom 39px
+    &__item
+      flex-direction column
+    &__link
+      margin-bottom 27px
+
+    .icon_arrow-next
+      display none
+    .link
+      width 100%
+      br
+        display none
+     // &__right
+     //   width 52%
+
+   //   &_index
+   //     .{$cls}
+   //       &__left
+   //         width 49%
+   //       &__right
+   //         width 51%

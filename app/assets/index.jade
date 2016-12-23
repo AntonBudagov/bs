@@ -1,0 +1,303 @@
+extends ../layouts/index.jade
+
+
+block head-title
+    | - Home
+
+block styles
+
+  //- another style just for this page
+
+block header
+  +b.header_index
+    +b.header-left.__left
+      +e.menu
+        +e.accordion#accordion_menu
+        +e.icon-loupe
+          +icon('loupe')
+      +e.logo
+        +e.logo-icon
+          +icon('logo')
+        +e.logo-text
+          +e.text-bullo
+            +icon('text-bullo')
+          +e.text-safe
+            +icon('text-safe')
+          +e.text-broker Страховой брокер
+      +e.how-it-work
+        +e.link
+          +b.link_color_green(href='#') Как это работает?
+        +e.link
+          +b.link_color_green(href='#') Что делает при страховом случае?
+
+
+      +b.menu_header
+        +e.search.__search
+            +e.input
+              +b('input').input_search(placeholder="Поиск")
+              +e.icon
+                +icon('loupe', 'icon_color_gray')
+        +e.list
+          +e.col
+            +e.item
+              each title in ['О компании', 'Контакты', 'Парнтерам', 'Вопросы и ответы']
+                +e.link
+                  +b.link_color_white(href='#')= title
+          +e.col
+            +e.item
+              each title, key in ['Страхование путешествеников', 'Страхование залогового имущества', 'Страхование заемщика', 'Страхование имущества', 'Страхование здоровья', 'Инвестиционное страхование жизни', 'Накопительное страхование жизни']
+                +e.link
+                if 0 === key
+                  +b.link_color_white(href='#')= title
+                else
+                  +b.link_color_white_disabled(href='#')= title
+
+    +e.right
+      +b.header-right
+        +b.feedback.__feedback
+          +e.item
+            +e.icon
+              +icon('russia')
+            +e.info
+              +e.title Бесплатняй по России
+              +b.link.__phone(href='tel:+78009991111') 8 800 999 11 11
+          +e.item
+            +e.icon
+              +icon('moscow')
+            +e.info
+              +e.title Для Москвы
+              +b.link.__phone(href='tel:+74951501511') 8 495 150 15 11
+        +b.hotline.__hotline
+          +e.icon
+            +icon('woman')
+            +e.online
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+block content
+  +e.inner_index
+    +e.left.js-scroll-column(data-scroll-speed='0.2')
+      +b.menu-how-work
+        +e.list
+          +e.item
+            each title, key in ['Как работает <br> туристическое <br> страхование', 'Как выбрать <br> страховой <br> полис', 'Как работает <br> сервис']
+              +e.link
+                +b.link_color_white.link_line_solid(href='#')!= title
+              if key <= 1
+                +icon('arrow-next')
+
+      +b.content-how-work
+        +e.item
+          +e.title.title_size_xl Как работает
+            br
+            | туристическое страхование
+          +e.title.title_size_l.brend_line_green Кто участвует в оказании помощи туристу?
+          +b.count_company
+            +e.item
+              +icon('umbrella')
+              +e.number 35
+              +e.text Страховых компаний
+          +b.travel.insurance
+            +e.item
+              +e.title.title_size_m Страховая компания —
+              +e.text Организация, которая продает Вам полис и оплачивает расходы при наступлении страхового случая.
+
+          +b.travel.service__company
+            +e.item
+              +e.map
+                img(src="/img/img_mini_map.png", alt="", title="")
+              +e.title.title_size_m Сервисная компания (ассистанс) —
+              +e.text Организация, осуществляющая координацию при наступлении страхового случая, выбирающая больницу, осуществляющая все согласования, принимающая решения, относительно целесообразности оказания тех или иных услуг по страховому полису, а также осуществляющая оплату лечения.
+
+          +b.travel.medical-institution
+            +e.item
+              +e.sub-item
+                +icon('medical-inst')
+                +e.number 24/7
+                +e.number.degree
+                  sapn 250
+                  span Страны
+              +e.title.title_size_m Медицинское учреждение —
+              +e.text больница (клиника, госпиталь) в той или иной стране, где, непосредственно, будет осуществляться лечение.
+            +e.title.title_size_l.brend_line_green Как происходит оказание помощи
+
+
+
+
+
+
+
+
+      +b.insurance-types
+        +e.col
+          -
+            var typeList = [
+              {icon: 'diplomat', label: 'Туристическое страхование'},
+              {icon: 'heart', label: 'Страхование жизни'},
+              {icon: 'house', label: 'Страхование имущества'},
+              {icon: 'heart-rating', label: 'Накопительное <br> страхование жизни'}
+            ]
+          each type in typeList
+            +e.item
+              +e.icon
+                +icon(type.icon)
+              +e.link
+                +b.link_color_black._line_solid(href='#')!= type.label
+        +e.col
+          -
+            var typeList = [
+              {icon: 'house-man', label: 'Страхования заемщика ипотеки'},
+              {icon: 'car', label: 'Страхование залогового имущества'},
+              {icon: 'heart-purse', label: 'Инвестиционное страхование  жизни'}
+            ]
+          each type in typeList
+            +e.item
+              +e.icon
+                +icon(type.icon)
+              +e.link
+                +b.link_color_black._line_solid(href='#')= type.label
+
+      +b.insurance-company
+        +e.header
+          +b.title_size_l.__title Страховые компании
+          +e.more
+            +b.link_color_green(href='#') Подробнее о страховых компаниях
+        +e.list
+          -
+            companyList = [
+              {img: '/img/img-erv.png'},
+              {img: '/img/img-vtb.png'},
+              {img: '/img/img-renesans.png'},
+              {img: '/img/img-alpha.png'},
+              {img: '/img/img-opora.png'},
+              {img: '/img/img-erv.png'},
+              {img: '/img/img-rosgosstrah.png'},
+              {img: '/img/img-renesans.png'},
+              {img: '/img/img-erv.png'},
+            ]
+          each company in companyList
+            +e.item
+              img(src=company.img)
+
+      +b.video-banner
+
+      +b.how-it-work
+        -
+          var itemList = [
+            {title: 'Как это работает?', icon: 'how-it-works', text: 'Выбирайте вариант страховки, оплачивайте удобным для вас способом, получите полис на email и просто распечатайте его. Электронный страховой полис принимается всеми визовыми центрами.'},
+            {title: 'Никаких переплат!', icon: 'purse', text: 'Мы продаем полисы по действующим тарифам страховых компаний и даже дешевле, потому что мы лидеры на рынке электронного страхования, и страховые компании конкурируют между собой, чтобы привлечь клиентов.'},
+            {title: 'Честность превыше всего', icon: 'list', text: 'Наша цель – показать вам все условия страхования честно и открыто, сообщить о любых возможных ограничениях в условиях страхования, чтобы вы были уверенны в своей страховке и понимали, на что можете рассчитывать. Для нас это действительно важно!'}
+          ]
+        each item in itemList
+          +e.item
+            +e.info
+              +b.title_size_m.__title= item.title
+              +e.text= item.text
+            +e.icon
+              +icon(item.icon)
+
+
+      +b('footer').footer.__footer
+        +e.social
+          +e.logo
+            +e.logo-icon
+              +icon('logo')
+            +e.logo-text © 2016 <br> BulloSafe
+          +b.socials.__social-list
+            each icon in ['fb', 'vk', 'gplus', 'twi', 'youtube', 'in']
+              +e.item
+                +b.link.__link(href='#')
+                  +icon(icon)
+        +b.contacts.__contacts
+          +e.phone
+            +b.title_size_s.__title Телефон
+            +e.text + 7 (800) 999 11 11
+          +e.email
+            +b.title_size_s.__title E-mail
+            +e.text info@bullosafe.ru
+        +b.sitemap.__sitemap
+          +b.search.__search
+            +e.input
+              +b('input').input_size_s
+              +e.icon
+                +icon('loupe', 'icon_color_gray')
+          +e.list
+            +e.col
+              +e.item
+                +b.title_size_s.__title Важное
+                each title in ['О компании', 'Контакты', 'Парнтерам', 'Вопросы и ответы']
+                  +e.link
+                    +b.link_color_gray(href='#')= title
+              +e.item
+                +b.title_size_s.__title  Полезное
+                each title in ['Как это работает?', 'Что делать при страховом случае?', 'Страхование компании?']
+                  +e.link
+                    +b.link_color_gray(href='#')= title
+            +e.col
+              +e.item
+                +b.title_size_s.__title Страховые программы
+                each title in ['Туристическое страхование', 'Страхование жизни', 'Страхование имущества', 'Страхования заемщика ипотеки', 'Страхование залогового имущества']
+                  +e.link
+                    +b.link_color_gray(href='#')= title
+          +e.license
+            +e.license-icon
+              +icon('page')
+            +e.license-text Лицензия ЦБ № 345667457456745
+
+    +e.right.js-scroll-column(data-scroll-speed='0.8')
+      +b.insurance-find
+        +e.type(style='background-image: url(/img/bg-find1.jpg);')
+          +e.header
+            +b.title_size_l._uppercase.__title Страхование путешествеников
+            +e.header-icon
+              +icon('diplomat')
+          +e.body
+            +b.filter.__filter
+              +e.country
+                +b.title_size_s.__label Страна путешествия
+                +e.input
+                  +b('input').input_size_m._color_transparent(type='text')
+              +e.dates
+                +b.title_size_s.__label Даты поездки
+                +b.date-field.__input
+                  +b.input_size_m._color_transparent.js-datepicker(type='text')
+                  +e.icon_white
+                    +icon('calendar')
+              +e.submit
+                +b.button_size_l._color_transparent._uppercase(type='submit') Найти страховку
+                +e.submit-icon
+                  +icon('triangle-pointer')
+        -
+          var typeList = [
+            {title: 'Страхование залогового имущества', icon: 'car', img: '2'},
+            {title: 'Страхование заемщика', icon: 'house-man', img: '3'},
+            {title: 'Страхование имущества', icon: 'house', img: '4'},
+            {title: 'Страхование здоровья', icon: 'heart', img: '5'},
+            {title: 'Инвестиционное страхование жизни', icon: '', img: '6'},
+            {title: 'Накопительное страхование жизни', icon: '', img: '7'}
+          ]
+        each type in typeList
+          +e.type_soon(style='background-image: url(/img/bg-find' + type.img + '.jpg);')
+            +e.header
+              +b.title_size_l._uppercase.__title= type.title
+              if type.icon
+                +e.header-icon
+                  +icon(type.icon)
+              +e.soon
+                +b.title_size_m.__soon-title Скоро
+
+block scripts
+  script(src='./js/datepicker.js')

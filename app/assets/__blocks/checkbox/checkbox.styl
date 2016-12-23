@@ -1,0 +1,23 @@
+$cls = 'checkbox'
+
+.{$cls}
+  position relative
+  display inline-block
+  font-size 0
+  cursor pointer
+  overflow hidden
+
+  &__input
+    position absolute
+    opacity 0
+    left -99999px
+    checkboxIcon()
+
+  &__label
+    display inline-block
+    vertical-align middle
+    max-width calc(100% - 32px)  // 55px is width of icon
+    padding-top 3px
+    font-family $openSans
+    font-size 14px
+    line-height 20px

@@ -1,0 +1,116 @@
+.sectionSix
+  padding-top: 90px
+  background-image: url(../img/background_last.jpg)
+  background-repeat: no-repeat
+  background-position: top center
+  background-size: 1920px auto
+  .whiteTitle
+    color: #fff
+    width: 240px
+    font-size: 48px
+    line-height: 48px
+    max-width: 745px
+    text-align: left
+    margin: 0 auto 33px
+    display: block
+    width: 100%
+  .largeForm
+    margin-bottom: 100px
+
+.formContact
+
+  width: 100%
+  height: 389px
+  box-shadow: 0 0 38px rgba(0, 0, 0, 0.35)
+  padding: 33px 30px 49px 33px
+
+  z-index: 9999
+
+  background: #fff
+  .titleFrom
+
+    color: #111
+    font-family: $brendFontBold
+    font-size: 30px
+    font-weight: 700
+
+  .subTitle
+
+    color: #111
+    font-family: $brendFontBold
+    font-size: 18px
+    font-weight: 600
+    margin-top: 30px
+
+
+  address
+    font-family: $defaultFont
+    color: #787878
+    font-weight: 400
+    margin-top: 20px
+    font-size: 18px
+    line-height: 24px
+
+    strong
+      font-size: 18px
+      color: #000
+
+  .phone
+    margin-top: 35px
+    a
+      color: black
+      font-family: $brendFontBold
+      font-size: 24px
+      font-weight: 700
+      &:before
+        content: ''
+        +sprite($phone)
+        display: inline-block
+        margin-right: 15px
+        vertical-align: middle
+  .email
+    a
+      text-decoration: underline
+      color: #787878
+      font-size: 18px
+      &:before
+        content: ''
+        +sprite($email)
+        display: inline-block
+        margin-right: 15px
+        vertical-align: middle
+
+  .timeWork
+    p
+      color: #787878
+      font-size: 18px
+      &:before
+        content: ''
+        +sprite($clock)
+        display: inline-block
+        margin-right: 15px
+        vertical-align: middle
+
+  .timeWork, .email
+    margin-top: 18px
+
+
+@include breakpoint($medium)
+
+  .formContact
+    top: 113px
+    left: 100px
+    position: absolute
+    max-width: 358px
+
+  .sectionSix
+    padding-top: 150px
+
+    .titleBuy
+      margin-bottom: 51px
+
+@include breakpoint($large)
+  .formContact
+    top: 113px
+    left: 0
+
