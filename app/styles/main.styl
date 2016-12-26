@@ -113,7 +113,12 @@ $cls = 'menu_header'
   //     .p3
   //       d: path("M25,25 L2,2")
 
-
+.how-work-ins-travel
+  height auto
+  position absolute
+  width 100%
+  min-height 100%
+  height auto
 $clss = 'menu-how-work'
   .{$clss}
     background-color: #3b424b
@@ -125,6 +130,14 @@ $clss = 'menu-how-work'
     padding-bottom 32px
     height auto
     position absolute
+    opacity 0
+    transform translateX(-100%)
+    transition transform 0.5s ease, opacity 0.5s ease
+    &.bottom
+      bottom 118px
+    &.active
+      transform translateX(0)
+      opacity 1
 
     &__item
       display flex
@@ -136,6 +149,7 @@ $clss = 'menu-how-work'
       display inline-block
       vertical-align top
       margin-bottom 0
+
       &:hover
         .link_line_solid
           border-bottom-color: #72bc14
@@ -147,6 +161,9 @@ $clss = 'menu-how-work'
       line-height: 20px
       font-family: $openSans
       border-bottom-color: #609e11
+      &.active
+        border-bottom-color transparent
+
 
 
 
@@ -160,11 +177,30 @@ $clss = 'menu-how-work'
 $clsss = 'content-how-work'
   .{$clsss}
     position absolute
-    top 0
+    top 118px
     left 0
     width 100%
     background-color white
-    min-height 100vh
+    display block
+    z-index 2
+    // position relative
+
+    &__text
+      color $black
+      font-size 16px
+      font-family $openSans
+      padding-left 42px
+      padding-right 43px
+      padding-bottom 30px
+    &__item
+      width 100%
+      position absolute
+      background-color white
+      opacity 0
+      top 0
+      transition opacity 0.322s ease-in
+      &.active
+        opacity 1
 
     &__title
       color: #262a30
@@ -174,7 +210,7 @@ $clsss = 'content-how-work'
     .brend_line_green
       color: white
       background-color $btn-green
-      padding 11px 43px 11px 42px
+      padding 14px 43px 16px 42px
 
   .count
     padding-top 37px
@@ -187,6 +223,7 @@ $clsss = 'content-how-work'
       font-family: $dinCondensed
       justify-content: flex-start
       align-items: center
+
     &__number
       font-size: 72px
       margin-right 11px
@@ -201,7 +238,7 @@ $clsss = 'content-how-work'
 
   .travel
 
-    border-bottom 1px solid #e0e4ea
+    border-bottom 1px solid $border
     padding-bottom 33px
     &__item
       padding-left 42px
@@ -228,19 +265,214 @@ $clsss = 'content-how-work'
     &__sub-item
       display flex
       padding-top 36px
+      margin-bottom 25px
       .travel__number
           margin-right 36px
     .degree
       text-align center
-      border-left solid 1px #e0e4ea
+      border-left solid 1px $border
       height 84px
+      padding-left 37px
       span
         display block
         &:last-child
           font-size: 20px
+          margin-top -12px
+
+  .medical-institution
+    padding-bottom 0px
+    border: none
+    .travel__item
+      padding-bottom 70px
 
 
 
+
+.steps-hellp
+  &__item
+
+    padding-top 27px
+    position relative
+    padding-left 75px
+
+    .icon
+      position absolute
+      top 50%
+      left 26px
+    &:nth-child(2)
+      .icon_arrow-step
+        margin-top 18px
+    &:nth-child(3)
+      .icon_arrow-step
+        margin-top 29px
+    .step
+      display flex
+      align-items center
+      justify-content flex-start
+      position relative
+      border-bottom 1px solid $border
+      padding-bottom 32px
+      padding-right 10px
+
+  &__circle
+    width 71px
+    height 71px
+    border-radius 50%
+    background-color $btn-green
+    position relative
+    .icon
+      position absolute
+      left 0
+      right 0
+      top 0
+      bottom 0
+      margin auto
+  &__number
+    font-size 100px
+    color: $border
+    font-family: $dinCondensed;
+    font-weight: 500
+    position absolute
+    left -24px
+  &__text
+    color $black
+    font-size 16px
+    font-family $openSans
+    max-width 280px
+    padding-left 18px
+
+
+.infoBlock
+  padding-top 26px
+  // padding-left 42px
+  padding-left 24px
+  padding-right 15px
+  padding-bottom 27px
+  display flex
+  justify-content space-between
+  background-color white
+  position relative
+  z-index 2
+  &__item
+    max-width: 191px
+    color: #9b9b9b
+    font-family: $openSans
+    font-size: 12px
+    font-weight: 400
+    line-height: 15px
+    &:last-child
+      max-width 209px
+
+
+
+
+
+
+
+
+.icon_arrow-step
+  width 25.738935797298033px
+  height 96.74687405716509px
+.icon_phone-amb
+  width 38px
+  height 38px
+.icon_ambulance
+  width 42px
+  height 38px
+.icon_berth
+  width 51px
+  height 31px
+.icon_plane
+  width 53px
+  height 23px
+
+.icon_alcohol
+  width 16px
+  height 38px
+.icon_a-bike
+  width 41px
+  height 23px
+.icon_franchise
+  width 32px
+  height 33px
+.icon_risks
+  width 23.213553390593333px
+  height 30px
+.icon_tour-pack
+  width 26px
+  height 37px
+.icon_chronic-dis
+  width 27px
+  height 36px
+.icon_alarm-clock
+  width 32px
+  height 33px
+
+
+#work-service
+  //
+.attention
+  padding-left 18px
+  padding-right 18px
+
+  &__item
+    display flex
+    border-bottom 1px solid $border
+    padding-top 27px
+    padding-bottom 30px
+  &__description
+    padding-left 21px
+    flex: 1 0 0
+  &__title
+    margin-bottom 10px
+    color: $black
+    font-family: $dinCondensed
+    font-size: 20px
+    font-weight: 400
+  &__text
+    color $black
+    font-size 16px
+    font-family $openSans
+
+  &__circle
+    width 60px
+    height 60px
+    background-color $btn-green
+    border-radius 50%
+    position relative
+    flex 0 0 60px
+    display table
+    span
+      color: white
+      font-size: 18px
+      font-weight: 400
+      line-height 60px
+      text-align center
+      display block
+
+    .icon
+      position absolute
+      left 0
+      right 0
+      top 0
+      bottom 0
+      margin auto
+
+
+
+#insurance-policy
+  //
+.service-bull-safe
+  &__item
+    //
+
+// width: 60px;
+// height: 113px;
+// color: #e0e4ea;
+// font-family: DINCondensedC;
+// font-size: 72px;
+// font-weight: 400;
+// line-height: 0;
 
 @media $mDesktop
   .{$cls}
@@ -248,6 +480,7 @@ $clsss = 'content-how-work'
 
   .{$clss}
     padding-bottom 39px
+
     &__item
       flex-direction column
     &__link
@@ -259,12 +492,5 @@ $clsss = 'content-how-work'
       width 100%
       br
         display none
-     // &__right
-     //   width 52%
-
-   //   &_index
-   //     .{$cls}
-   //       &__left
-   //         width 49%
-   //       &__right
-   //         width 51%
+  .{$clsss}
+    top 206px

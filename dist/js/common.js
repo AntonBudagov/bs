@@ -112,3 +112,24 @@ $("#accordion_menu").on("click", function() {
     $(this).toggleClass("active");
     $(".menu_header").toggleClass("active");
 });
+
+$("#how-this-work").on("click", function() {
+    if ($(this).hasClass("active")) {
+        $(".content-how-work").hide();
+    }
+    console.log($(this).hasClass("active"));
+    $(this).toggleClass("active");
+    $(".menu-how-work").toggleClass("active");
+    $(".content-how-work__item").removeClass("active");
+});
+
+$(".menu-how-work__link .link").on("click", function(e) {
+    var link = $(this).attr("href");
+    e.preventDefault();
+    $(".content-how-work").show();
+    $(".content-how-work__item").removeClass("active");
+    $(".menu-how-work__link .link").removeClass("active");
+    $(this).addClass("active");
+    $(link).addClass("active");
+    console.log(link);
+});
