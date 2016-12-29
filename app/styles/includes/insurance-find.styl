@@ -2,11 +2,10 @@ $cls = 'insurance-find'
 
 .{$cls}
   height 100%
-  background-color #262a30
-
+  background-color #3b424b
   &__header
     position relative
-    margin-bottom 4.5%
+    // margin-bottom 4.5%
 
   &__header-icon
     position absolute
@@ -21,16 +20,51 @@ $cls = 'insurance-find'
         stroke #fff
 
   &__type
-    padding-top 4.4%
-    padding-bottom 4.5%
+    // padding-top 4.4%
+    padding-top 5%
+    // padding-bottom 4.5%
+    padding-bottom 8%
     padding-right 5%
     padding-left 5.4%
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+    background-position 94% 126px
     background-repeat no-repeat
-    background-position top center
-    background-size cover
+    background-size auto
+    &:first-child
+      background-color white
+      .insurance-find__title, .filter__label
+        color $black
+      &__soon-title.title
+        color $black
+
+
+    // background-size cover
     &_soon
-      padding-top 7.2%
-      padding-bottom 3.5%
+      // padding-top 7.2%
+      // padding-bottom 3.5%
+      padding-top 0
+      padding-bottom 0
+      border-bottom 1px solid #6f7277
+      background-repeat no-repeat
+      background-size: auto
+      height 200px
+      background-position center right
+      &:nth-child(2)
+        background-position 95% top
+      &:nth-child(3),
+      &:nth-child(5)
+        background-position 94% center
+      &:nth-child(6)
+        background-position 94% bottom
+      &:nth-child(4)
+        background-position 97.3% center
+      &:last-child
+        border none
+        background-position 94% bottom
+
       .{$cls}
         &__header-icon
           top 50%
@@ -72,17 +106,57 @@ $cls = 'insurance-find'
     font-weight 500
     line-height 50px
 
+  .group-input
+    display flex
+    align-items center
+    justify-content space-between
+    width 50%
+    .filter__label
+      margin-bottom 0
+      font-family $openSans
+    &:nth-child(2)
+      .filter__label
+        margin-right 21px
+    &:nth-child(3)
+      .filter__label
+        margin-right 9px
+        margin-left 33px
+
 @media $mDesktop
   .{$cls}
     &__type
-      padding-top 6.9%
-      padding-bottom 7.5%
+      // padding-top 6.9%
+      // padding-bottom 7.5%
       padding-left 8.4%
+      background-size 106px auto
+      background-position: 93% 126px
       &_soon
-        padding-top 9%
-        padding-bottom 9%
+        // padding-top 9%
+        // padding-bottom 9%
+        &:nth-child(2)
+          background-position 92% top
+        &:nth-child(3),
+        &:nth-child(5)
+          background-position 93% center
+        &:nth-child(4)
+          background-position 98.3% center
+        &:nth-child(6), &:last-child
+          background-position 94% bottom
+
         .{$cls}__header
           margin-bottom 0
+
+    .group-input
+      display inline-block
+      .filter__label
+        margin-bottom 7px
+      &:nth-child(2)
+        .filter__label
+          margin-right 0
+      &:nth-child(3)
+        .filter__label
+          margin-right 0
+          margin-left 0
 
     &__header
       margin-bottom 7.5%

@@ -16,21 +16,24 @@ $cls = 'header-left'
       height 19px
       fill #77bc1f
 
-  &__accordion
-    width 25px
-    height 20px
-    margin-bottom 25px
-    cursor pointer
-    &:before
-      content ''
-      display block
-      width 100%
-      height 3px
-      box-shadow 0 3px #77bc1f, 0 11px #77bc1f, 0 19px #77bc1f
-      border-radius 2px
+  // &__accordion
+  //   width 25px
+  //   height 20px
+  //   margin-bottom 25px
+  //   cursor pointer
+  //   &:before
+  //     content ''
+  //     display block
+  //     width 100%
+  //     height 3px
+  //     box-shadow 0 3px #77bc1f, 0 11px #77bc1f, 0 19px #77bc1f
+  //     border-radius 2px
 
   &__icon-loupe
     cursor pointer
+    position: absolute
+    left: 45px
+    top: 66px
 
   &__logo
     display inline-block
@@ -77,6 +80,7 @@ $cls = 'header-left'
     color #77bc1f
     text-transform uppercase
     letter-spacing 0.7px
+    display block
 
   &__how-it-work
     display inline-block
@@ -86,12 +90,13 @@ $cls = 'header-left'
     display inline-block
     vertical-align top
     width 53%
-    padding-top 14px
+    padding-top 23px
     padding-left 7.5%
 
   &__link
     font-size 14px
     font-family $openSans
+    text-align: right
     &:not(:last-of-type)
       margin-bottom 5px
 
@@ -105,7 +110,9 @@ $cls = 'header-left'
       padding-left 9%
     &__how-it-work
       width 40%
-      padding-top 4px
+      padding-top 20px
       padding-left 7%
+    &__link
+      text-align: left
     &__link:not(:last-of-type)
       margin-bottom 14px

@@ -5,7 +5,7 @@ $cls = 'page'
 
   &__inner
     position relative
-    margin-top 113px
+    padding-top 113px
     font-size 0
 
   &__left
@@ -17,6 +17,8 @@ $cls = 'page'
     font-size 0
     overflow hidden
     transition transform .2s ease, bottom .5s ease, position .5s ease
+    box-shadow: 18px -5px 20px 0px rgba(16,17,18,0.19)
+    z-index: 1
 
   &__right
     position absolute
@@ -54,9 +56,9 @@ $cls = 'page'
       .tabs
         width 63.5%
 
-    &__inner_index
-      .{$cls}
-        &__left
-          width 49%
-        &__right
-          width 51%
+    // &__inner_index
+    //   .{$cls}
+    //     &__left
+    //       width 49%
+    //     &__right
+    //       width 51%

@@ -9,51 +9,258 @@ block styles
 
   //- another style just for this page
 
-block header
-  +b.header
-    +b.header-left.__left
-      +e.menu
-        +e.accordion
-        +e.icon-loupe
-          +icon('loupe')
-      +e.logo
-        +e.logo-icon
-          +icon('logo')
-        +e.logo-text
-          +e.text-bullo
-            +icon('text-bullo')
-          +e.text-safe
-            +icon('text-safe')
-          +e.text-broker Страховой брокер
-      +e.how-it-work
-        +e.link
-          +b.link_color_green(href='#') Как это работает?
-        +e.link
-          +b.link_color_green(href='#') Что делает при страховом случае?
+//- block header
+//-   +b.header_index
+//-     +b.header-left.__left
+//-       +e.menu
+//-         //- +e.accordion#accordion_menu
+//-         .burger-menu
+//-           .burger
+//-         +e.icon-loupe
+//-           +icon('loupe')
+//-       +e.logo
+//-         +e.logo-icon
+//-           +icon('logo')
+//-         +e.logo-text
+//-           +e.text-bullo
+//-             +icon('text-bullo')
+//-           +e.text-safe
+//-             +icon('text-safe')
+//-           +e.text-broker Страховой брокер
+//-       +e.how-it-work
+//-         +e.link
+//-           +b.link_color_green#how-this-work(href='#') Как это работает?
+//-         //- +e.link
+//-         //-   +b.link_color_green(href='#') Что делает при страховом случае?
 
-    +e.right
-      +b.header-right
-        +b.feedback.__feedback
-          +e.item
-            +e.icon
-              +icon('russia')
-            +e.info
-              +e.title Бесплатняй по России
-              +b.link.__phone(href='tel:+78009991111') 8 800 999 11 11
-          +e.item
-            +e.icon
-              +icon('moscow')
-            +e.info
-              +e.title Для Москвы
-              +b.link.__phone(href='tel:+74951501511') 8 495 150 15 11
-        +b.hotline.__hotline
-          +e.icon
-            +icon('woman')
-            +e.online
+
+//-       +b.menu_header
+//-         +e.search.__search
+//-             +e.input
+//-               +b('input').input_search(placeholder="Поиск")
+//-               +e.icon
+//-                 +icon('loupe', 'icon_color_gray')
+//-         +e.list
+//-           +e.col
+//-             +e.item
+//-               each title in ['О компании', 'Контакты', 'Парнтерам', 'Вопросы и ответы']
+//-                 +e.link
+//-                   +b.link_color_white(href='#')= title
+//-           +e.col
+//-             +e.item
+//-               each title, key in ['Страхование путешествеников', 'Страхование залогового имущества', 'Страхование заемщика', 'Страхование имущества', 'Страхование здоровья', 'Инвестиционное страхование жизни', 'Накопительное страхование жизни']
+//-                 +e.link
+//-                 if 0 === key
+//-                   +b.link_color_white(href='#')= title
+//-                 else
+//-                   +b.link_color_white_disabled(href='#')= title
+
+//-     +e.right
+//-       +b.header-right
+//-         +b.feedback.__feedback
+//-           +e.item
+//-             +e.icon
+//-               +icon('russia')
+//-             +e.info
+//-               +e.title Бесплатняй по России
+//-               +b.link.__phone(href='tel:+78009991111') 8 800 999 11 11
+//-           +e.item
+//-             +e.icon
+//-               +icon('moscow')
+//-             +e.info
+//-               +e.title Для Москвы
+//-               +b.link.__phone(href='tel:+74951501511') 8 495 150 15 11
+//-         +b.hotline.__hotline
+//-           +e.icon
+//-             +icon('woman')
+//-             +e.online
 
 block content
-  +e.inner
+  +e.inner.calc
+
     +e.left.js-scroll-column
+      +b.how-work-ins-travel
+        +b.menu-how-work.top
+          +e.list
+            +e.item
+              -
+                var title = [{link: '#travel-insurance', label: 'Как работает <br> туристическое <br> страхование'},{link: '#insurance-policy', label: 'Как выбрать <br> страховой <br> полис'},{link: '#work-service', label: 'Как работает <br> сервис'}]
+              each text, key in title
+                +e.link
+                  +b.link_color_white.link_line_solid(href='#{text.link}')!= text.label
+                if key <= 1
+                  +icon('arrow-next')
+        +b.content-how-work
+          +e.item#travel-insurance
+            +e.title.title_size_xl Как работает
+              br
+              | туристическое страхование
+            +e.title.title_size_l.brend_line_green Кто участвует в оказании помощи туристу?
+            +b.count_company
+              +e.item
+                +icon('umbrella')
+                +e.number 35
+                +e.text Страховых компаний
+            +b.travel.insurance
+              +e.item
+                +e.title.title_size_m Страховая компания —
+                +e.text Организация, которая продает Вам полис и оплачивает расходы при наступлении страхового случая.
+
+            +b.travel.service__company
+              +e.item
+                +e.map
+                  img(src="/img/img_mini_map.png", alt="", title="")
+                +e.title.title_size_m Сервисная компания (ассистанс) —
+                +e.text Организация, осуществляющая координацию при наступлении страхового случая, выбирающая больницу, осуществляющая все согласования, принимающая решения, относительно целесообразности оказания тех или иных услуг по страховому полису, а также осуществляющая оплату лечения.
+
+            +b.travel.medical-institution
+              +e.item
+                +e.sub-item
+                  +icon('medical-inst')
+                  +e.number 24/7
+                  +e.number.degree
+                    sapn 250
+                    span Страны
+                +e.title.title_size_m Медицинское учреждение —
+                +e.text больница (клиника, госпиталь) в той или иной стране, где, непосредственно, будет осуществляться лечение.
+              +e.title.title_size_l.brend_line_green Как происходит оказание помощи
+            +b.steps-hellp
+              +e.item
+                +icon('arrow-step')
+                .step
+                  +e.number 1
+                  +e.circle
+                    +icon('plane')
+                  +e.text Клиент приобретает страховой полис
+              +e.item
+                +icon('arrow-step')
+                .step
+                  +e.number 2
+                  +e.circle
+                    +icon('berth')
+                  +e.text В поездке наступает страховой случай
+              +e.item
+                +icon('arrow-step')
+                .step
+                  +e.number 3
+                  +e.circle
+                    +icon('phone-amb')
+                  +e.text Звонок в Сервисную компанию для вызова врача
+              +e.item
+                .step
+                  +e.number 4
+                  +e.circle
+                    +icon('ambulance')
+                  +e.text Сервисная компания организует медицинскую помощь Клиенту
+
+            +b.infoBlock
+              +e.item Если Клиент не может связаться с Сервисным центром, он может самостоятельно обратиться в медицинское учреждение по своему выбору и получить в страховой компании компенсацию своих расходов после возвращения домой.
+              +e.item Если Клиент не может самостоятельно передвигаться, Сервисная компания может организовать транспортировку пострадавшего к месту лечения специальным транспортом или даже вертолетом, если это предусмотрено условиями полиса.
+            +b.menu-how-work.bottom
+                +e.list
+                  +e.item
+                    -
+                      var title = [{link: '#travel-insurance', label: 'Как работает <br> туристическое <br> страхование'},{link: '#insurance-policy', label: 'Как выбрать <br> страховой <br> полис'},{link: '#work-service', label: 'Как работает <br> сервис'}]
+                    each text, key in title
+                      +e.link
+                        +b.link_color_white.link_line_solid(href='#{text.link}')!= text.label
+                      if key <= 1
+                        +icon('arrow-next')
+
+
+
+
+
+
+
+          +e.item#insurance-policy
+            +e.title.title_size_xl Как выбрать страховой полис
+              br
+              | для путешествующих?
+            +e.text.title_size_s При выборе туристической страховки обратите внимание на наличие рисков, а еще лучше, прочитайте Правила страхования разных компаний и отметьте, какие исключения и лимиты покрытия в той или иной страховой компании.
+            +e.title.title_size_l.brend_line_green На что нужно обратить внимание:
+            +b.attention
+
+              -
+                var attentionList = [
+                  {icon: 'risks', label: 'Риски', desc: 'Внимательно ознакомиться с рисками, которые покрывает страховой полис. Обязательно обратите внимание на исключения из покрытия.'},
+                  {icon: 'tour-pack', label: 'Страховка в турпакете', desc: 'Большинство туроператоров включают страховку в турпакет. Внимательно ознакомьтесь с покрываемыми расходами такого полиса. Зачастую это минимальный набор рисков. Лучше самостоятельно оформить полис с тем покрытием, которое Вас устроит.'},
+                  {icon: 'chronic-dis', label: 'Хронические заблоевания', desc: 'При наличии у путешествующих хронических заболеваний или аллергии необходимо выбрать полис с соответствующим покрытием. Не все страховые компании покрывают медицинскую помощь в подобных ситуациях.'},
+                  {icon: 'alcohol', label: 'Алкоголь', desc:'Обратить внимание, действует ли страховой полис при алкогольном опьянении. Лишь некоторые компании согласны оказывать помощь даже в том случае, если в крови у Клиента обнаружен алкоголь. И не важно, являлось ли алкогольное опьянение причиной несчастного случая.'},
+                  {icon: '', label:'Минимальное покрытие', desc: 'При оформлении страхового полиса не стоит выбирать минимальное покрытие. Лучше увеличить страховую сумму до 50 000 у.е.'},
+                  {icon: 'a-bike', label: 'Активный отдых', desc:'Если планируется активный отдых, Вам необходим страховой полис со спортивным покрытием. При этом необходимо проверить, не входит ли данный вид спорта в исключения.'},
+                  {icon: 'franchise', label: 'Франшиза', desc:'Уточнить наличие франшизы. Франшиза – это та часть покрытия, которую не выплачивает страховая компания. Например, в страховых полисах, включенных в турпакеты, чаще всего есть франшиза в размере 30 у.е. Это значит, что при наступлении страхового случае первые 30 у.е. выплачивает клиент самостоятельно, а дальше уже вступает в покрытие страховая компания.'},
+                  {icon: 'alarm-clock', label: 'Начало действия полиса', desc:'Еще одна важная деталь – с какого момента начинает действовать полис. У некоторых компаний полис начинает действовать сразу при выезде из города, у кого-то в 100 км от города, у кого-то после пересечения паспортного контроля.'}
+                ]
+              each attention, key in attentionList
+                +e.item
+                  +e.circle
+                    if key === 4
+                      span 50 000
+                    else
+                      +icon(attention.icon)
+                  +e.description
+                    +e.title.title_size_m!=attention.label
+                    +e.text.title_size_s!=attention.desc
+            +b.menu-how-work.bottom
+              +e.list
+                +e.item
+                  -
+                    var title = [{link: '#travel-insurance', label: 'Как работает <br> туристическое <br> страхование'},{link: '#insurance-policy', label: 'Как выбрать <br> страховой <br> полис'},{link: '#work-service', label: 'Как работает <br> сервис'}]
+                  each text, key in title
+                    +e.link
+                      +b.link_color_white.link_line_solid(href='#{text.link}')!= text.label
+                    if key <= 1
+                      +icon('arrow-next')
+
+
+
+
+
+
+
+
+
+
+
+
+          +e.item#work-service
+
+            +e.title.title_size_xl Как работает сервис Bullo Safe
+            +b.service-bull-safe
+              -
+                var bs = [
+                  {img: '/img/img_bullosafe_1.png', label: 'Клиент выбирает вид страхования, который ему необходим'},
+                  {img: '/img/img_bullosafe_2.png', label: 'Вводит изначальные параметры', text: 'На примере туристического страхования — это даты и страна поездки.'},
+                  {img: '/img/img_bullosafe_3.png', label: 'После этого Клиент попадает на выбор страховых компаний и параметров страхования', text: ''},
+                  {img: '/img/img_bullosafe_4.png', label: 'Клиент может выбрать заведомо готовые варианты', text: 'Например «для визы», «для беременных» или «спортивную страховку»'},
+                  {img: '/img/img_bullosafe_5.png', label: 'Или можно перейти к подробному оформлению полиса и выбрать те параметры страхового полиса, которые необходимы.'},
+                  {img: '/img/img_bullosafe_6.png', label: 'После того, как выбор сделан, необходимо вбить данные застрахованных'},
+                  {img: '/img/img_bullosafe_7.png', label: 'И данные Страхователя, он же плательщик.'},
+                  {img: '/img/img_bullosafe_8.png', label: 'После того, как все данные будут внесены, будет возможно оплатить полис и получить его на электронную почту.'}
+                ]
+              each safe, key in bs
+                +e.item
+                  +e.head
+                    +e.number=key+1
+                    +e.description
+                      +e.title!=safe.label
+                      if safe.text
+                        +e.sub-title!=safe.text
+                  +e.wrappImg
+                    img(src="#{safe.img}", alt="")
+            +b.menu-how-work.bottom
+              +e.list
+                +e.item
+                  -
+                    var title = [{link: '#travel-insurance', label: 'Как работает <br> туристическое <br> страхование'},{link: '#insurance-policy', label: 'Как выбрать <br> страховой <br> полис'},{link: '#work-service', label: 'Как работает <br> сервис'}]
+                  each text, key in title
+                    +e.link
+                      +b.link_color_white.link_line_solid(href='#{text.link}')!= text.label
+                    if key <= 1
+                      +icon('arrow-next')
+
+
       +b.company-list
         +b.title_size_xl.__title Страхование путешественников
         -

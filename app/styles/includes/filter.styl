@@ -5,20 +5,50 @@ $cls = 'filter'
 
   &__label
     margin-bottom 3.5%
-    font-family $openSans
+    font-family $dinCondensed
     font-size 14px
     color #fff
 
   &__country
-    display inline-block
-    vertical-align top
-    width 32%
-    margin-right 9.5%
+    display block
+    margin-top 45px
+
+    // max-width 449px
+    width 65.2%
+
+    // width 32%
+    // margin-right 9.5%
 
   &__dates
-    display inline-block
-    vertical-align top
-    width 32.5%
+    display flex
+    // vertical-align top
+    // max-width 449px
+    width 65.2%
+    // width 100%
+    flex-wrap wrap
+    flex-direction: row
+    align-items: center
+    margin-top 42px
+    justify-content: space-between
+    .date-field
+      width 65.5%
+
+    .filter__label
+      margin-bottom 0
+      font-family $openSans
+      &:first-child
+        margin-bottom 3.5%
+        font-family $dinCondensed
+      // &:nth-child(2)
+      //   margin-right 21px
+
+      // &:nth-child(4)
+      //   margin-right 9px
+      //   margin-left 33px
+    .title_size_m
+      flex 0 0 100%
+
+      // width 32.5%
 
   &__submit
     position relative
@@ -44,10 +74,26 @@ $cls = 'filter'
 @media $mDesktop
   .{$cls}
     &__country
-      width 41.5%
-      margin-right 5.5%
+      width 73.065%
+      // margin-right 5.5%
     &__dates
-      width 53%
+      width 73.065%
+      display block
+      .filter__label
+        margin-bottom: 7px
+        &:nth-child(2)
+          margin-right 0
+
+
+        &:nth-child(4)
+          margin-right 0
+          margin-left 0
+      .date-field
+        width 64.8%
+        max-width 147px
+
+
+
     &__submit
       width 60%
       margin-top 7%

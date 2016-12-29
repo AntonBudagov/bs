@@ -1,0 +1,54 @@
+$cls = 'burger-menu'
+
+.{$cls}
+  width: 25px
+  height: 20px
+  cursor: pointer
+  position: absolute
+  left: 45px
+  top: 26px
+  &.active
+    .burger
+      &::after
+        transform: rotate(-45deg)
+        bottom: 0px
+      &::before
+        transform: rotate(45deg)
+        top: 0px
+      background: transparent
+
+.burger
+  position: absolute
+  background: $btn-green
+  width: 100%
+  height: 3px
+  top: 50%
+  right: 0px
+  margin-top: -4px
+  opacity: 1
+  border-radius: 2px
+  &::before
+    position: absolute
+    background: $btn-green
+    width: 100%
+    height: 3px
+    top: 8px
+    content: ""
+    display: block
+    border-radius: 2px
+  &::after
+    position: absolute
+    background: $btn-green
+    width: 100%
+    height: 3px
+    bottom: 8px
+    content: ""
+    display: block
+    transition: all .1s ease-in-out
+    border-radius: 2px;
+
+  &::before
+    transition: all .1s ease-in-out
+
+  transition: all .1s ease-in-out
+

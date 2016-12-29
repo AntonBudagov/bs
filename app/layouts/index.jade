@@ -15,6 +15,8 @@ html(lang="ru")
     link(rel='stylesheet', href='lib/select2/dist/css/select2.min.css')
     link(rel='stylesheet', href='lib/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css')
     link(rel='stylesheet', href='lib/ion.rangeSlider/css/ion.rangeSlider.css')
+    //- link(rel='stylesheet', href='lib/simplebar/simplebar.css')
+    //- link(rel='stylesheet' href='lib/perfect-scrollbar/css/perfect-scrollbar.min.css')
     link(rel='stylesheet', href='styles/main.css')
 
 
@@ -28,7 +30,72 @@ html(lang="ru")
     include ../assets/icons
 
 
-    block header
+    //- block header
+    +b.header_index
+        +b.header-left.__left
+          +e.menu
+            //- +e.accordion#accordion_menu
+            .burger-menu
+              .burger
+            +e.icon-loupe
+              +icon('loupe')
+          +e.logo(href="/")
+            +e.logo-icon
+              +icon('logo')
+            +e.logo-text
+              +e.text-bullo
+                +icon('text-bullo')
+              +e.text-safe
+                +icon('text-safe')
+              +e.text-broker Страховой брокер
+          +e.how-it-work
+            +e.link
+              +b.link_color_green#how-this-work(href='#') Как это работает?
+            //- +e.link
+            //-   +b.link_color_green(href='#') Что делает при страховом случае?
+
+
+          +b.menu_header
+            +e.search.__search
+                +e.input
+                  +b('input').input_search(placeholder="Поиск")
+                  +e.icon
+                    +icon('loupe', 'icon_color_gray')
+            +e.list
+              +e.col
+                +e.item
+                  each title in ['О компании', 'Контакты', 'Парнтерам', 'Вопросы и ответы']
+                    +e.link
+                      +b.link_color_white(href='#')= title
+              +e.col
+                +e.item
+                  each title, key in ['Страхование путешествеников', 'Страхование залогового имущества', 'Страхование заемщика', 'Страхование имущества', 'Страхование здоровья', 'Инвестиционное страхование жизни', 'Накопительное страхование жизни']
+                    +e.link
+                    if 0 === key
+                      +b.link_color_white(href='#')= title
+                    else
+                      +b.link_color_white_disabled(href='#')= title
+
+        +e.right
+          +b.header-right
+            +b.feedback.__feedback
+              +e.item
+                +e.icon
+                  +icon('russia')
+                +e.info
+                  +e.title Бесплатняй по России
+                  +b.link.__phone(href='tel:88005002400') 8 800 500 24 00
+
+              +e.item
+                +e.icon
+                  +icon('moscow')
+                +e.info
+                  +e.title Для Москвы
+                  +b.link.__phone(href='tel:84951501511') 8 495 150 15 11
+            +b.hotline.__hotline
+              +e.icon
+                +icon('woman')
+                +e.online
 
     block content
 
@@ -40,8 +107,14 @@ html(lang="ru")
     script(src='lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')
     script(src='lib/bootstrap-datepicker/dist/locales/bootstrap-datepicker.ru.min.js')
     script(src='lib/ion.rangeSlider/js/ion.rangeSlider.min.js')
+
+
+    script(src='lib/simplebar/simplebar.js')
+    //- script(src="lib/perfect-scrollbar/js/perfect-scrollbar.min.js")
+    script(src='lib/ScrollToFixed/jquery-scrolltofixed-min.js')
+
     //- FIXME кэширование свг
-    script(src='js/svgIcons.js')
+    //- script(src='js/svgIcons.js')
     script(src='js/common.js')
     //- script(src='js/datepicker.js')
     script(src='js/select.js')
